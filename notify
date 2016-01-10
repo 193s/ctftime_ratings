@@ -1,3 +1,17 @@
-#!/bin/bash
-channel='general'
-./check.py | slackcat -x -c $channel
+#!/usr/bin/env python
+import os
+from subprocess import check_output
+
+channel = 'general'
+
+c_dir = os.path.dirname(os.path.realpath(__file__))
+res = check_output([c_dir + '/check.py'])
+os.system('touch ' + c_dir + '/log')
+lines = open(c_dir + '/log').read().splitlines()
+if not res.replace('\n', ':') in lines:
+  print '|', res.strip()
+  os.system('echo %r | slackcat -x -c "%s"' % (res, channel))
+  with open(c_dir + '/log', 'w') as f:
+    f.write(res.replace('\n', ':'))
+
+print '.'
