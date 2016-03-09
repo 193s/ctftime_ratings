@@ -21,5 +21,5 @@ slackcat message sent to general (0.295s)
 ```
 - https://github.com/193s/slackcat
 
-![image](https://cloud.githubusercontent.com/assets/6814758/12223130/4ae0470e-b812-11e5-97a7-d85c2be457b4.png)
+![image](https://cloud.githubusercontent.com/assets/6814758/13628509/fefe22b6-e615-11e5-9e83-703ceb4498fb.png)
 
